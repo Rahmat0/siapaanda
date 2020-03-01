@@ -1,0 +1,46 @@
+#!/bin/bash
+#version 1.0
+
+# Variables
+b='\033[1m'
+u='\033[4m'
+bl='\E[30m'
+r='\E[31m'
+g='\E[32m'
+bu='\E[34m'
+m='\E[35m'
+c='\E[36m'
+w='\E[37m'
+endc='\E[0m'
+enda='\033[0m'
+blue='\e[1;34m'
+cyan='\e[1;36m'
+red='\e[1;31m'
+
+figlet Tools | lolcat
+print('''-=[ MyTools ]=- 
+echo [Menu]
+ echo [1] Cek IP 
+ echo [2] Install OSIF
+ echo [3] Keluar ' ' ' )
+echo menu = input('[?] Silahkan pilih menu : ') 
+if menu == '1': 
+cekip() 
+elif menu == '2': 
+iOsif() 
+elif menu == '3': 
+print('[?] Keluar..') 
+sys.exit() 
+else: 
+print('[?] Perintah tidak diketahui..') sys.exit()
+def cekip():
+echo print(f'[!] Mendapatkan IP..')
+re = requests.get('https://api.myip.com').json() 
+import requests, os
+ip = re['ip'] 
+print(f'[!] IP kamu : {ip}') 
+def iOsif(): 
+print(f'[!] Menginstall tools osif..') os.system('pkg update upgrade') os.system('pkg install git python2') os.system('git clone https://github.com/ciku370/OSIF') os.system('cd OSIF') 
+os.system('pip2 install -r requirements.txt') 
+os.system('python2 osif.py')
+
